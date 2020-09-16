@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>quizz gen</title>
+				<script>
+			let game ={
+				questions: [
+					{
+						qText: "Is Fortnit gud",
+						aList:['Yes', 'sure', 'Maybe', 'NO'],
+						aCorrect: 'NO'
+					},
+										{
+						qText: "Are ranges in d and d 5e gud",
+						aList:['Yes', 'sure', 'Maybe', 'NO'],
+						aCorrect: 'NO'
+					},
+										{
+						qText: "Is your god dead",
+						aList:['Yes', 'sure', 'Maybe', 'NO'],
+						aCorrect: 'Yes'
+					},
+					
+				],
+				createQuestions: function () {
+					document.getElementById("answerBox").innerHTML = "";
+					let RNGesus = Math.floor(Math.random() * 3)
+					document.getElementById("queationBox").innerHTML = game.questions[RNGesus].qText;
+					for (let i=0; i< game.questions[RNGesus].aList.Length; i++){
+						document.getElementById("answerBox").innerHTML += `<input type="radio" id="answer${i}" name="selection" value="${game.questions[RNGesus].aList[i]}"><label for="${game.questions[RNGesus].aList[i]}">${game.questions[RNGesus].aList[i]}</label>`
+					}
+				},
+				checkAnswer: function() {
+					
+				}
+			}
+		</script>
+	</head>
+	<body onload="">
+		<div id="queationBox">
+		</div>
+		<div id="answerBox">
+		</div>
+		<div id="responseBox">
+		</div>
+		<button id="sumbmit" onclick="">sumbit answer</button>
+	</body>
+</html>
